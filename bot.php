@@ -74,6 +74,7 @@ if(!is_null($events)){
                     $textReplyMessage = "TR Autobot";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
+              /*
                 case "help":
                     $textReplyMessage = "คำสั่งเบื้องต้น  Rate=> เช็คอัตราแลกเปลี่ยน   Cal=>คำนวณเงินตามอัตราแลกเปลี่ยน   Tel=>ตรวจเบอร์     Move=>เช็คตำแหน่ง";
                     $replyData = new TextMessageBuilder($textReplyMessage);
@@ -104,7 +105,7 @@ if(!is_null($events)){
                     $packageID = 2;
                     $replyData = new StickerMessageBuilder($packageID,$stickerID);
                     break;
-/*
+
                 case "im":
                     $imageMapUrl = 'https://www.mywebsite.com/imgsrc/photos/w/sampleimagemap';
                     $replyData = new ImagemapMessageBuilder(
@@ -122,7 +123,7 @@ if(!is_null($events)){
                                 )
                         )); 
                     break;      
-*/
+
                 case "tm":
                     $replyData = new TemplateMessageBuilder('Confirm Template',
                         new ConfirmTemplateBuilder(
@@ -144,7 +145,8 @@ if(!is_null($events)){
                 default:
                     $textReplyMessage = $text_user;
                     $replyData = new TextMessageBuilder($textReplyMessage);         
-                    break;                                      
+                    break;   
+                    */
             }
             break;
         default:
