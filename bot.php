@@ -129,6 +129,15 @@ $accessToken = "2lbfVeTy5rqKMZLavJzqnRRSLzb9bH6cHK3Su8Skhw3B8VEBT53dApvmd+sklkxr
         $arrayPostData['messages'][1]['stickerId'] = "131";
         replyMsg($arrayHeader,$arrayPostData);
     }
+    else{
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "คิดไรไม่ออกบอกรักอาร์ตสิคะ";
+        $arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "1";
+        $arrayPostData['messages'][1]['stickerId'] = "116";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
